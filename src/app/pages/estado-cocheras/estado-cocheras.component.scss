@@ -1,9 +1,13 @@
 @use "./../../../../public/styles/tablas.scss";
 
-h1{
-    color: red;
+h1 {
+  color: red;
 }
 
-#agregar-cochera{
-    margin: auto;
+#agregar-cochera {
+  margin: auto;
+}
+
+.boton-resaltado {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
 }

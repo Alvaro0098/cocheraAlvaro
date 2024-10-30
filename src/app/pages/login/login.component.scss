@@ -1,74 +1,85 @@
-@use "./../../../../public/styles/colors.scss";
-
-h1{
-    font-size: 100px;
-    color: white;
-    z-index: 1;
+h1 {
+  font-size: 100px;
+  color: white;
+  z-index: 1;
+  text-align: center; // Centra el título
 }
 
-main{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100svh;
-}
+main {
+  display: flex; // Cambia a flex para centrar el contenido
+  flex-direction: column; // Coloca los elementos en columna
+  justify-content: center; // Centra verticalmente
+  align-items: center; // Centra horizontalmente
+  height: 100vh; // Altura de la ventana
+  background-image: url("./../../../../public/img/istockphoto-1516988179-612x612.webp");
+  background-size: cover; // Cubre toda el área
+  background-position: center; // Centra la imagen
 
-#izquierda{
-    background-image: url("./../../../../public/img/car-park.jpg");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    &::after{
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        background-color: colors.$color-primario;
-        opacity: 75%;
-        height: 100%;
+  @media (max-width: 820px) {
+    h1 {
+      font-size: 50px; // Tamaño del título en pantallas pequeñas
     }
+  }
 }
 
-#derecha{
-    display: grid;
-    grid-template-rows: 1fr 50px;
-    align-items: center;
-}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white; // Fondo blanco para el formulario
+  padding: 40px; // Espaciado interno
+  border-radius: 10px; // Bordes redondeados
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Sombra suave para el formulario
+  width: 400px; // Ancho fijo del formulario
+  margin: 20px 0; // Espaciado entre el formulario y otros elementos
 
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    button{
-        margin-top: 10px;
-    }
-}
-
-input{
-    border-bottom: 2px solid colors.$color-primario;
-    font-size: 2rem;
+  input {
+    border: none; // Sin borde
+    border-bottom: 2px solid #ccc; // Borde inferior gris claro
+    font-size: 1.5rem; // Tamaño de fuente más pequeño
     text-align: center;
+    margin: 15px 0; // Espaciado entre inputs
+    padding: 10px; // Espaciado interno
+    width: 100%; // Ancho del input completo
+    transition: border-bottom-color 0.3s;
+
+    &:focus {
+      border-bottom-color: blue; // Cambia el color del borde al enfocar
+      outline: none; // Sin contorno
+    }
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 20px; // Espaciado del botón
+    font-size: 1.2rem; // Tamaño de fuente del botón
+    background-color: blue; // Color de fondo
+    color: white; // Color del texto
+    border: none; // Sin borde
+    border-radius: 5px; // Bordes redondeados
+    cursor: pointer; // Cambia el cursor al pasar el ratón
+    transition: background-color 0.3s; // Transición suave
+
+    &:hover:not(:disabled) {
+      background-color: darkblue; // Color más oscuro al pasar el ratón
+    }
+
+    &:disabled {
+      background-color: lightgray; // Color cuando está deshabilitado
+      color: darkgray; // Color del texto cuando está deshabilitado
+      cursor: not-allowed; // Cambia el cursor al pasar el ratón
+    }
+  }
+
+  p {
+    color: red; // Color para el mensaje de error
+    margin: 10px 0; // Espaciado para el mensaje de error
+  }
 }
 
-a{
-    text-align: center;
-}
-
-
-@media (width < 820px) {
-    h1{
-        font-size: 50px;
-    }
-    main{
-        grid-template-columns: 1fr;
-        grid-template-rows: 200px auto;
-    }
-    #derecha{
-        margin-top: 1rem;
-        align-items: start;
-    }
-    form{
-        justify-content: space-between;
-    }
+a {
+  text-align: center;
+  margin-top: 10px; // Espacio superior para el enlace
+  color: blue; // Color del enlace
+  text-decoration: underline; // Subrayado para el enlace
 }

@@ -1,0 +1,51 @@
+table {
+  margin: 20px auto;
+  width: 90%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: #ffffff; /* Texto blanco */
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+tbody tr:hover {
+  background-color: rgba(52, 152, 219, 0.1); /* Azul claro al pasar el ratón */
+}
+
+tbody td {
+  font-size: 0.9rem;
+}
+
+.disponible {
+  background-color: #2ecc71; /* Verde */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.ocupado {
+  background-color: #e74c3c; /* Rojo */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+}

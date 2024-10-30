@@ -9,24 +9,17 @@ import { FormsModule, NgForm } from '@angular/forms';
   standalone: true,
   imports: [RouterModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-
   authService = inject(DataAuthService);
 
+  //loginData:Login = {
+  //  username: 'admin',
+  //  password: 'admin'
+  //}
+
   router = inject(Router);
-
-  errorLogin = false;
-  async login(loginForm: NgForm){
-    const {usuario, password} = loginForm.value;
-    const loginData: Login = {username: usuario, password}
-    const res = await this.authService.login(loginData)
-    if(res?.status === "ok") this.router.navigate(['/estado-cocheras']);
-    else this.errorLogin = true;
-  }
-
-}
 
   //Login con .then
   // login(){
@@ -45,3 +38,15 @@ export class LoginComponent {
   //   })
   //   console.log('Despues del fetch')
   // }
+
+  errorLogin = false;
+  async login(loginForm: NgForm) {
+    const { username, password } = loginForm.value;
+    const loginData = { username, password };
+
+    const res = await this.authService.login(loginData);
+    console.log(res?.status);
+    if (res?.statusText === 'OK') this.router.navigate(['estado-cocheras']);
+    else this.errorLogin = true;
+  }
+}

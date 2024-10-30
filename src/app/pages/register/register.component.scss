@@ -1,0 +1,73 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+
+  #izquierda {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  }
+
+  #derecha {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+      background-color: white; /* Fondo blanco */
+      border-radius: 12px; /* Bordes redondeados */
+      padding: 40px; /* Aumentar espacio interior */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* Espaciado entre elementos */
+
+      input {
+        padding: 15px; /* Aumentar espacio interior de inputs */
+        border: 1px solid #ccc;
+        border-radius: 6px;
+
+        &:focus {
+          border-color: #666;
+          outline: none;
+        }
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 6px; /* Bordes redondeados para botón */
+        padding: 15px; /* Aumentar espacio interior del botón */
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+
+      p {
+        color: red;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+}

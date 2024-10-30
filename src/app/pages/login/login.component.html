@@ -1,16 +1,14 @@
 <main>
-    <div id="izquierda">
-        <h1>PARKING APP</h1>
-    </div>
-    <div id="derecha">
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <input type="text" id="usuario" placeholder="Usuario" name="usuario" ngModel required>
-            <input type="password" id="password" placeholder="Contraseña" name="password" ngModel required>
-            <button [disabled]="loginForm.invalid" class="boton-resaltado" type="submit">Iniciar sesión</button>
-            @if(errorLogin) {
-                <p>Error en login</p>
-            }
-        </form>
-        <a [routerLink]="['/registro']">Registrarse</a>
-    </div>
+  
+    <h1>COCHERA APP</h1>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <input type="text" id="username" placeholder="Usuario" name="username" ngModel required>
+        <input type="password" id="password" placeholder="Contraseña" name="password" ngModel required>
+        <button [disabled]="loginForm.invalid" class="boton-resaltado" type="submit">Iniciar sesión</button>
+        @if(errorLogin) {
+            <p>Error en login</p>
+        }
+    </form>
+    <a [routerLink]="['/register']">Registrarse</a>
+
 </main>

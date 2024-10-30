@@ -1,0 +1,27 @@
+<main class="flex-column-center">
+    <table>
+        <thead>
+            <td>Cochera</td>
+            <td>Patente</td>
+            <td>precio</td>
+            <td>editar</td>
+        </thead>
+        <tbody>
+            @for (tarifa of dataTarifasService.tarifas; track $index) {
+                <tr>
+                    <td>
+                        {{ tarifa.id }}
+                    </td>
+                    <td>
+                        {{ tarifa.descripcion }}
+                    </td>
+                    <td>
+                        {{ tarifa.valor }}
+                    </td>
+                    <td>
+                        <button (click)="actualizarTarifa(tarifa.id, tarifa.valor)">Editar</button>
+                    </td>
+            }
+        </tbody>
+    </table>
+</main>

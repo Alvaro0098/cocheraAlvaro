@@ -1,6 +1,96 @@
-@use './../../../../public/styles/colors.scss';
+header {
+  display: flex;
+  justify-content: space-between; // Espacio entre el título y la navegación
+  align-items: center; // Centra verticalmente
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
 
-.link-activo{
-    color: colors.$color-primario;
-    font-weight: bold;
+  color: white; // Color del texto
+  padding: 1rem 2rem; // Espaciado interno
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Sombra suave
+
+  h1 {
+    font-size: 2rem; // Tamaño del título
+    margin: 0; // Sin margen
+  }
+
+  nav {
+    display: flex;
+    align-items: center; // Centra verticalmente los elementos del nav
+    gap: 1.5rem; // Espaciado entre los enlaces
+
+    a {
+      text-decoration: none; // Sin subrayado
+      color: white; // Color del texto
+      padding: 0.5rem 1rem; // Espaciado interno
+      border-radius: 5px; // Bordes redondeados
+      transition: background-color 0.3s ease; // Transición suave para el fondo
+
+      &:hover {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.2
+        ); // Fondo suave al pasar el mouse
+      }
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 5px;
+      z-index: 10;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      .usuario {
+        position: relative; // Para posicionar el dropdown
+        cursor: pointer; // Indica que es interactivo
+
+        span {
+          font-weight: bold; // Texto en negrita
+        }
+
+        .dropdown {
+          display: none; // Oculta por defecto
+          position: absolute; // Para que aparezca sobre otros elementos
+          right: 0; // Alinear a la derecha
+          background-color: white; // Fondo blanco
+          border-radius: 5px; // Bordes redondeados
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Sombra suave
+          margin-top: 10px; // Espaciado superior
+
+          button {
+            background-color: transparent; // Fondo transparente
+            color: black; // Color del texto
+            border: none; // Sin borde
+            padding: 10px; // Espaciado interno
+            width: 100%; // Ancho completo
+            text-align: left; // Alinear texto a la izquierda
+
+            &:hover {
+              background-color: rgba(
+                0,
+                0,
+                0,
+                0.1
+              ); // Fondo suave al pasar el mouse
+            }
+          }
+        }
+
+        &:hover .dropdown {
+          display: block; // Muestra el dropdown al pasar el mouse
+        }
+      }
+    }
+  }
+
+  .link-activo {
+    color: yellow; // Cambia a amarillo cuando está activo
+    font-weight: bold; // Negrita cuando está activo
+  }
 }

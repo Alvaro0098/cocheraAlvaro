@@ -1,39 +1,68 @@
 @use "./colors.scss";
 
-table{
-  margin: 20px auto;
-  thead, tr {
-      display: grid;
-      grid-template-columns: 50px 1fr 1fr 1fr;
-      min-width: 600px;
-      justify-items: center;
-      align-items: center;
-      height: 50px;
-      border-bottom: 1px solid colors.$color-texto;
-  }
-  thead{
+table {
+  margin: 50px auto;
+  width: 80%;
+  border-collapse: collapse;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 8px;
+
+  thead {
+    background-color: #f4f7f9;
     font-weight: bold;
+    color: #333;
   }
-  tr:hover{
-    background-color: rgba(0, 0, 0, 0.1)
+
+  th,
+  td {
+    padding: 15px 10px;
+    text-align: left;
   }
-  .acciones-container{
+
+  th {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+
+    &:last-child {
+      border-bottom: none; // Quitar borde de la última fila
+    }
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .acciones-container {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    button{
-      width: 50px;
-      display: grid;
-      align-items: center;
-      img{
-        width: 80%;
-        margin: auto;
+    gap: 10px;
+
+    button {
+      padding: 8px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
       }
     }
   }
 }
 
-.disponible{
+.disponible {
   background-color: colors.$color-exito;
   padding: 5px 10px;
   border-radius: 15px;
@@ -41,7 +70,7 @@ table{
   pointer-events: none;
 }
 
-.ocupado{
+.ocupado {
   background-color: colors.$color-warn;
   padding: 5px 10px;
   border-radius: 15px;
